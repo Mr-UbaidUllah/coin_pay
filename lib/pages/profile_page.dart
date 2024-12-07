@@ -9,7 +9,6 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const MyBottomNavigation(),
       backgroundColor: Colors.white70,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
