@@ -1,6 +1,3 @@
-import 'package:coin_pay/components/my_bottom_navigation.dart';
-import 'package:coin_pay/pages/profile_page.dart';
-import 'package:coin_pay/pages/spending_page.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 
@@ -10,8 +7,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white70,
-      bottomNavigationBar: const MyBottomNavigation(),
+      backgroundColor: Colors.transparent,
       body: SingleChildScrollView(
         child: Stack(children: [
           Column(
@@ -44,11 +40,9 @@ class HomePage extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(50)),
                               child: const TextField(
                                 decoration: InputDecoration(
-                                  prefixIcon: Icon(Icons.search_outlined),
-                                  hintText: 'Search "Payment"',
-
-                                  border: InputBorder.none
-                                ),
+                                    prefixIcon: Icon(Icons.search_outlined),
+                                    hintText: 'Search "Payment"',
+                                    border: InputBorder.none),
                               ),
                             ),
                             const Icon(
@@ -113,15 +107,17 @@ class HomePage extends StatelessWidget {
                             ),
                             Text(
                               "Add Money",
-                              style: TextStyle(
-                                  color: Colors.white, fontSize: 16),
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16),
                             )
                           ],
                         ),
                       )
                     ],
                   )),
-              const SizedBox(height: 45,),
+              const SizedBox(
+                height: 45,
+              ),
               // Transaction area
               Container(
                 alignment: Alignment.center,
@@ -149,56 +145,50 @@ class HomePage extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20)),
-                        child: Column(
+                        child: const Column(
                           children: [
                             //Transaction area
                             ListTile(
-                              leading:
-                                  const CircleAvatar(child: Icon(Icons.money)),
-                              title: const Text(
+                              leading: CircleAvatar(child: Icon(Icons.money)),
+                              title: Text(
                                 "Spending",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w500),
+                                style: TextStyle(fontWeight: FontWeight.w500),
                               ),
                               trailing: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  const Text(
+                                  Text(
                                     "-400",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w500,
                                         color: Colors.red,
                                         fontSize: 16),
                                   ),
-                                  const SizedBox(
+                                  SizedBox(
                                     width: 10,
                                   ),
-                                  InkWell(
-                                    onTap:  () => Navigator.push(context, MaterialPageRoute(builder: (context) => const SpendingPage(),)),
-                                    child: const Icon(
-                                      Icons.arrow_forward_ios_rounded,
-                                      size: 15,
-                                    ),
+                                  Icon(
+                                    Icons.arrow_forward_ios_rounded,
+                                    size: 15,
                                   )
                                 ],
                               ),
                             ),
-                            const Divider(
+                            Divider(
                               indent: 25,
                               endIndent: 25,
                             ),
                             ListTile(
-                              leading: const CircleAvatar(
-                                  child: Icon(FontAwesome.file)),
-                              title: const Text(
+                              leading:
+                                  CircleAvatar(child: Icon(FontAwesome.file)),
+                              title: Text(
                                 "Income",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w500),
+                                style: TextStyle(fontWeight: FontWeight.w500),
                               ),
                               trailing: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  const Text(
+                                  Text(
                                     "+3000",
                                     style: TextStyle(
                                       fontWeight: FontWeight.w500,
@@ -206,30 +196,25 @@ class HomePage extends StatelessWidget {
                                       fontSize: 16,
                                     ),
                                   ),
-                                  const SizedBox(
+                                  SizedBox(
                                     width: 10,
                                   ),
-                                  InkWell(
-                                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfilePage(),)),
-                                    child: const Icon(
-                                      Icons.arrow_forward_ios_rounded,
-                                      size: 15,
-                                    ),
+                                  Icon(
+                                    Icons.arrow_forward_ios_rounded,
+                                    size: 15,
                                   )
                                 ],
                               ),
                             ),
-                            const Divider(
+                            Divider(
                               indent: 25,
                               endIndent: 25,
                             ),
-                            const ListTile(
-                              leading:
-                                  CircleAvatar(child: Icon(Icons.money)),
+                            ListTile(
+                              leading: CircleAvatar(child: Icon(Icons.money)),
                               title: Text(
                                 "Bill",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w500),
+                                style: TextStyle(fontWeight: FontWeight.w500),
                               ),
                               trailing: Row(
                                 mainAxisSize: MainAxisSize.min,
@@ -265,76 +250,80 @@ class HomePage extends StatelessWidget {
               height: 75,
               width: 350,
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10)
-              ),
+                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 15.0, vertical: 10),
                     child: Column(
                       children: [
-                        Stack(
-                          children: [ const Icon(
+                        Stack(children: [
+                          const Icon(
                             Icons.monetization_on_rounded,
                             size: 34,
-                            color: Colors.blue ,),
-                            Positioned(
+                            color: Colors.blue,
+                          ),
+                          Positioned(
                               left: 22,
-                                bottom: 20,
-                                child: Container(
-                                 decoration: BoxDecoration(
-                                   color: Colors.white,
-                                   borderRadius: BorderRadius.circular(50)
-                                 ),
-                                    child: Icon(Icons.arrow_upward_rounded,
-                                      size: 15,
-                                    )))
+                              bottom: 20,
+                              child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(50)),
+                                  child: const Icon(
+                                    Icons.arrow_upward_rounded,
+                                    size: 15,
+                                  )))
                         ]),
-                        Text("Send")
+                        const Text("Send")
                       ],
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 15.0, vertical: 10),
                     child: Column(
                       children: [
-                        Stack(
-                            children: [ Icon(
-                              Icons.monetization_on_rounded,
-                              size: 34,
-                              color: Colors.yellowAccent,),
-                              Positioned(
-                                  left: 22,
-                                  bottom: 20,
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.circular(50)
-                                      ),
-                                      child: Icon(Icons.arrow_downward_rounded,
-                                        size: 15,
-                                      )))
-                            ]),
-                        Text("Request")
+                        Stack(children: [
+                          const Icon(
+                            Icons.monetization_on_rounded,
+                            size: 34,
+                            color: Colors.yellowAccent,
+                          ),
+                          Positioned(
+                              left: 22,
+                              bottom: 20,
+                              child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(50)),
+                                  child: const Icon(
+                                    Icons.arrow_downward_rounded,
+                                    size: 15,
+                                  )))
+                        ]),
+                        const Text("Request")
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: 15.0, vertical: 10),
                     child: Column(
                       children: [
-                        Stack(
-                            children: [ Icon(Icons.home,
-                              size: 34,
-                              color: Colors.yellowAccent ,),
-                            ]),
+                        Stack(children: [
+                          Icon(
+                            Icons.home,
+                            size: 34,
+                            color: Colors.yellowAccent,
+                          ),
+                        ]),
                         Text("Bank")
                       ],
                     ),
                   ),
-
                 ],
               ),
             ),

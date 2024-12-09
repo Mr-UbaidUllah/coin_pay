@@ -1,4 +1,4 @@
-import 'package:coin_pay/pages/home_page.dart';
+import 'package:coin_pay/components/my_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingPage extends StatefulWidget {
@@ -107,7 +107,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const HomePage(),
+                                    builder: (context) => const MyBottomNavigation(),
                                   ));
                             }
                             controller.nextPage(

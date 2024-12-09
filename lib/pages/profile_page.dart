@@ -1,4 +1,4 @@
-import 'package:coin_pay/components/my_bottom_navigation.dart';
+
 import 'package:coin_pay/pages/personal_info_page.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -9,7 +9,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: const Text("My Profile"),
@@ -145,7 +145,7 @@ class ProfilePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 30,)
+
               ],
             )
           ],
